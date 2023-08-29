@@ -235,7 +235,7 @@ window.addEventListener('load', () => {
       this.image = document.querySelector('#enemy');
       this.frame = 0;
       this.maxFrame = 5;
-      this.speed = 5;
+      this.speed = 6;
       this.fps = 20;
       this.animationInterval = 1000 / this.fps;
       this.frameTimer = 0;
@@ -283,7 +283,7 @@ window.addEventListener('load', () => {
     if (enemyTimer > enemyInterval) {
       enemies.push(new Enemy(canvas.width, canvas.height));
       enemyTimer = 0;
-      enemyInterval = Math.random() * 1100 + 200;
+      enemyInterval = Math.random() * 1100 + 300;
     }
 
     enemies.forEach((enemy) => {
@@ -338,7 +338,7 @@ window.addEventListener('load', () => {
 
   let lastTime = 0;
   let enemyTimer = 0;
-  let enemyInterval = Math.random() * 1100 + 200;
+  let enemyInterval = Math.random() * 1100 + 300;
 
   function animate(timeStamp = 0) {
     const deltaTime = timeStamp - lastTime;
