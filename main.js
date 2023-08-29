@@ -12,6 +12,9 @@ window.addEventListener('load', () => {
     ArrowLeft: true,
     ArrowRight: true,
     ' ': true,
+    w: true,
+    a: true,
+    d: true,
   };
   let gameFrame = 0;
   let enemies = [];
@@ -114,9 +117,9 @@ window.addEventListener('load', () => {
         if (distance < enemy.width / 3 + this.width / 3) gameOver = true;
       });
 
-      if (input.includes('ArrowRight')) {
+      if (input.includes('ArrowRight') || input.includes('d')) {
         this.speed = 5;
-      } else if (input.includes('ArrowLeft')) {
+      } else if (input.includes('ArrowLeft') || input.includes('a')) {
         this.speed = -5;
       } else {
         this.speed = 0;
@@ -132,7 +135,8 @@ window.addEventListener('load', () => {
       if (
         (input.includes('ArrowUp') ||
           input.includes('swipe up') ||
-          input.includes(' ')) &&
+          input.includes(' ') ||
+          input.includes('w')) &&
         this.onGround()
       ) {
         this.vy = -20;
